@@ -106,3 +106,11 @@ it('can ask for existing batches', function () {
         )
         ->assertSuccessful();
 });
+
+it('displays error message when there are no batches', function () {
+    mock(DatabaseBatchRepository::class)->shouldReceive('get')->with(100, null)->andReturn([]);
+
+    artisan(LaravelQueueCancelBatchCommand::class)
+        ->expectsOutput('There are no active batches.')
+        ->assertFailed();
+});

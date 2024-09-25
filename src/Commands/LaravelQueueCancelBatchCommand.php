@@ -29,6 +29,12 @@ class LaravelQueueCancelBatchCommand extends Command
         } else {
             $batches = collect($batchRepository->get(100, null))->reject(fn (Batch $batch) => $batch->pendingJobs < 1 || $batch->finished() || $batch->canceled());
 
+            if ($allBatches->isEmpty()) {
+                $this->info('There are no active batches.');
+
+                return self::INVALID;
+            }
+
             /** @var array<int, string> */
             $batchIds = multiselect(
                 label: 'Select one or more batches to cancel',
