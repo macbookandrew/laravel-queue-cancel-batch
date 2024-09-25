@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace MacbookAndrew\LaravelQueueCancelBatch\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelQueueCancelBatchCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-queue-cancel-batch';
 
     public $description = 'My command';
 
