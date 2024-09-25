@@ -17,9 +17,6 @@ class LaravelQueueCancelBatchServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-queue-cancel-batch')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel_queue_cancel_batch_table')
             ->hasCommand(LaravelQueueCancelBatchCommand::class);
     }
 }
