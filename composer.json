@@ -1,6 +1,6 @@
 {
     "name": "macbookandrew/laravel-queue-cancel-batch",
-    "description": "Provides an Artisan command to cancel a queued batch of jobs",
+    "description": "Provides an Artisan command to cancel a specific batch of queued jobs",
     "keywords": [
         "macbookandrew",
         "laravel",
