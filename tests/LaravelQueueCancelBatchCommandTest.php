@@ -101,7 +101,7 @@ it('can ask for existing batches', function () {
 
     artisan(LaravelQueueCancelBatchCommand::class)
         ->expectsQuestion(
-            question: 'Select one or more batches to cancel',
+            question: 'Select one or more batches to cancel:',
             answer: [$testBatch2->id, $testBatch3->id],
         )
         ->assertSuccessful();
